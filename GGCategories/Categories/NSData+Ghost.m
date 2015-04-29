@@ -7,6 +7,8 @@
 //
 
 #import "NSData+Ghost.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonCrypto.h>
 #import <zlib.h>
 
@@ -397,7 +399,7 @@ static const short base64DecodingTable[256] = {
 - (NSString *)base64Encoding
 {
     NSString *base64=@"";
-    if ([[UIDevice currentDevice]isGreaterThanOS7])
+    if ([[UIDevice currentDevice] isGreaterThanOS7])
     {
         base64=[self base64EncodedStringWithOptions:0];
     }
